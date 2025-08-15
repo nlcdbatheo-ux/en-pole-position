@@ -1,7 +1,9 @@
+// Sélection des éléments HTML
 const chatForm = document.querySelector("#chat-form");
 const chatInput = document.querySelector("#chat-input");
 const chatBox = document.querySelector("#chat-box");
 
+// Fonction pour ajouter un message dans le chat
 function addMessage(message, sender) {
   const div = document.createElement("div");
   div.classList.add("message");
@@ -10,18 +12,22 @@ function addMessage(message, sender) {
   chatBox.appendChild(div);
   chatBox.scrollTop = chatBox.scrollHeight;
 
+  // Animation optionnelle
   setTimeout(() => div.classList.add("show"), 50);
 }
 
+// Événement lors de l'envoi du formulaire
 chatForm.addEventListener("submit", async (event) => {
   event.preventDefault();
   const userMessage = chatInput.value.trim();
   if (!userMessage) return;
   chatInput.value = "";
 
+  // Afficher le message de l'utilisateur
   addMessage(userMessage, "user");
 
   try {
+    // Envoyer la requête POST au bot Render
     const response = await fetch("https://en-pole-bot.onrender.com/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -34,6 +40,8 @@ chatForm.addEventListener("submit", async (event) => {
     }
 
     const data = await response.json();
+
+    // Afficher la réponse du bot
     addMessage(data.response, "bot");
 
   } catch (error) {
