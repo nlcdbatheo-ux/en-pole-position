@@ -31,6 +31,11 @@ chatForm.addEventListener("submit", async (event) => {
       body: JSON.stringify({ prompt: userMessage })
     });
 
+    if (!response.ok) {
+      addMessage("Erreur : le bot n'a pas répondu correctement.", "bot");
+      return;
+    }
+
     const data = await response.json();
 
     // Afficher la réponse du bot
