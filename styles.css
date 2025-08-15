@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: #fff;
+}
+
+.site-header {
+  background-color: #222;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+.topbar span {
+  margin-left: 10px;
+}
+
+.container {
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+}
+
+.post {
+  background-color: #222;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.post h2 {
+  margin: 0 0 10px;
+}
+
+.post a {
+  color: #1e90ff;
+  text-decoration: none;
+}
+
+.site-footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #222;
+  margin-top: 20px;
+}
