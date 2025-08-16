@@ -3,8 +3,8 @@ const chatForm = document.getElementById("chat-form");
 const chatInput = document.getElementById("chat-input");
 const chatMessages = document.getElementById("chat-messages");
 
-// URL de ton bot Render
-const BOT_URL = "https://en-pole-bot.onrender.com/";
+// URL de ton bot Render (endpoint correct)
+const BOT_URL = "https://en-pole-bot.onrender.com/chat";
 
 // Fonction pour afficher un message dans le chat
 function addMessage(sender, message) {
@@ -52,3 +52,4 @@ chatForm.addEventListener("submit", async (e) => {
         chatInput.focus();
     }
 });
+
